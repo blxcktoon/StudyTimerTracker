@@ -3,11 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Study Timer Tracker</title>
+    <meta
+      name="description"
+      content="A calm space for focused study sessions and daily tasks."
+    />
+    <title>Study Timer | Make time for focus</title>
     <link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Study Timer home">
+          <span class="brand-mark" aria-hidden="true">ST</span>
+          <span>STUDY TIMER</span>
+        </a>
+        <span class="header-note">
+          <span class="status-dot" aria-hidden="true"></span>
+          YOUR SPACE TO FOCUS
+        </span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">A LITTLE PROGRESS, EVERY DAY</p>
+            <h1 id="page-title">Study Timer<span>.</span></h1>
+            <p class="intro-copy">
+              Make room for deep work, one focused session at a time.
+            </p>
+          </div>
+          <div class="date-chip">
+            <span class="date-icon" aria-hidden="true">✦</span>
+            <span>Today is a fresh start</span>
+          </div>
+        </section>
+
+        <div class="dashboard">
+          <section class="card timer-card" aria-labelledby="timer-heading">
+            <div class="card-heading">
+              <div>
+                <p class="card-kicker">YOUR SESSION</p>
+                <h2 id="timer-heading">Focus room</h2>
+              </div>
+              <span class="session-tag" id="session-tag">01 / FOCUS</span>
+            </div>
+
+            <div class="mode-switch" role="group" aria-label="Choose session type">
+              <button class="mode-button is-active" type="button" data-mode="focus" aria-pressed="true">
+                Focus <span>25 min</span>
+              </button>
+              <button class="mode-button" type="button" data-mode="break" aria-pressed="false">
+                Short break <span>5 min</span>
+              </button>
+            </div>
+
+            <div class="timer-area">
+              <div class="timer-ring" id="timer-ring" role="timer" aria-label="25 minutes remaining">
+                <div class="timer-face">
+                  <span class="timer-caption" id="timer-caption">TIME TO FOCUS</span>
+                  <span class="timer-display" id="timer-display">25:00</span>
+                  <span class="timer-status" id="timer-status" aria-live="polite">Ready when you are.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timer-actions">
+              <button class="button button-primary" id="start-button" type="button">
+                <span class="play-icon" id="start-icon" aria-hidden="true">▶</span>
+                <span id="start-label">Start focus</span>
+              </button>
+              <button class="button button-secondary" id="reset-button" type="button">
+                Reset
+              </button>
+            </div>
+
+            <div class="timer-footnote">
+              <span class="footnote-spark" aria-hidden="true">✳</span>
+              <p>One thing at a time. You’ve got this.</p>
+            </div>
+          </section>
+
+          <section class="card tasks-card" aria-labelledby="tasks-heading">
+            <div class="card-heading tasks-heading">
+              <div>
+                <p class="card-kicker">KEEP YOUR MOMENTUM</p>
+                <h2 id="tasks-heading">Today’s tasks</h2>
+              </div>
+              <span class="task-count" id="task-count">0 / 0</span>
+            </div>
+
+            <div class="task-progress" aria-hidden="true">
+              <span id="task-progress"></span>
+            </div>
+            <p class="task-summary" id="task-summary">Start with one small win.</p>
+
+            <form class="task-form" id="task-form">
+              <label class="visually-hidden" for="task-input">Add a task</label>
+              <input
+                id="task-input"
+                name="task"
+                type="text"
+                placeholder="What would you like to work on?"
+                maxlength="100"
+                required
+                autocomplete="off"
+              />
+              <button class="add-button" type="submit" aria-label="Add task">+</button>
+            </form>
+
+            <p class="task-feedback" id="task-feedback" aria-live="polite"></p>
+            <ul class="task-list" id="task-list" aria-label="Your tasks"></ul>
+            <div class="empty-state" id="empty-state">
+              <span class="empty-icon" aria-hidden="true">✎</span>
+              <p>Your list is a blank page.</p>
+              <span>Add a task to get started.</span>
+            </div>
+          </section>
+        </div>
+
+        <footer class="page-footer">
+          <span>Created by nhlanhlatwayi</span>
+          <span>November 17, 2026</span>
+        </footer>
+      </main>
+    </div>
   </body>
 </html>
